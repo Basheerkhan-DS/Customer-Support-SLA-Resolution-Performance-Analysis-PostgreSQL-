@@ -13,7 +13,7 @@ SELECT ticket_channel,ROUND(AVG(resolution_hours),2)
 FROM time_metric
 GROUP BY ticket_channel;
 
---Average resolution time by ticket_type
+--Average resolution time by ticket_type 
 SELECT ticket_type,ROUND(AVG(resolution_hours),2) 
 FROM time_metric
 GROUP BY ticket_type;
