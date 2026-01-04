@@ -1,51 +1,57 @@
-📌 Project Overview
+# Customer Support Ticket Analysis (SQL)
 
-This project analyzes customer support ticket data to evaluate operational efficiency, SLA adherence, and customer satisfaction trends using PostgreSQL.
+## 📌 Project Overview
+This project analyzes customer support ticket data to evaluate resolution performance, SLA compliance, and customer satisfaction using PostgreSQL SQL.
 
-📌 Dataset
+The goal is to simulate a real-world Data Analyst workflow:
+- Raw data ingestion
+- Data cleaning and validation
+- KPI and SLA metric creation
+- Business-focused insights
 
-Total tickets analyzed: 8,469
+---
 
-Ticket statuses: Open, Closed, Pending Customer Response
+## 🛠️ Tools & Technologies
+- PostgreSQL
+- SQL (CTEs, Window Functions, Percentiles)
+- GitHub for version control
 
-Channels: Email, Phone, Chat, Social Media
+---
 
-Priorities: Low, Medium, High, Critical
+## 📂 Project Structure
 
-📌 Key Data Quality Findings
+sql/
+- 01_table_creation.sql      → Raw table schema
+- 02_data_cleaning.sql       → Data type correction & cleaning
+- 03_data_validation.sql     → Data quality checks
+- 04_time_metrics_view.sql   → Resolution time view
+- 05_core_kpis.sql           → SLA & performance KPIs
+- 06_advanced_analysis.sql   → Ranking & bucket analysis
 
-33% of tickets had missing first-response timestamps
+---
 
-67% had missing resolution timestamps
+## 📊 Key Metrics & Analysis
+- Average ticket resolution time
+- Resolution time by priority, channel, and ticket type
+- SLA compliance (max resolution < 24 hours)
+- P90 resolution time
+- Resolution speed vs customer satisfaction
+- Identification of slowest resolved tickets
 
-Time inconsistencies were identified and excluded from SLA analysis
+---
 
-Only logically valid resolved tickets were used for time-based metrics
+## 🔍 Key Findings
+- Maximum resolution time was **23.47 hours**, no ticket breached 24-hour SLA
+- **90% of tickets resolved within 16 hours**
+- Faster resolutions showed higher customer satisfaction
+- High-priority tickets had longer resolution times than Critical tickets
+- Email and Social Media channels were slower compared to Phone
 
-📌 Key Metrics & Insights
+---
 
-Average resolution time: 7.58 hours
-
-Maximum resolution time: 23.47 hours
-
-90th percentile resolution time: 16 hours
-
-Resolution times varied marginally across channels and priorities
-
-High-priority tickets did not consistently receive faster resolution
-
-Customer satisfaction showed variation across resolution-speed buckets
-
-📌 Techniques Used
-
-Data cleaning & validation
-
-Timestamp conversion & time-difference calculations
-
-Aggregations & percentiles
-
-Window functions (RANK)
-
-CTE-based segmentation
-
-Business KPI analysis
+## 🎯 Business Impact
+This analysis helps:
+- Identify SLA risks early
+- Optimize support channel performance
+- Improve customer satisfaction through faster resolutions
+- Prioritize operational improvements using data-driven insights
